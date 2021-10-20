@@ -1,16 +1,5 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
+"Microbial volatimoics is a rapidly growing field of study and has shown great potential for applications in food, farming, and clinical sectors in the future." {cite}`fitzgerald_morrin_holland_2021`. The study of volatile organic compounds (VOCs) has emerged as a path to characterizing disease-specific volatiles. The occurence of disease-specific volatiles can be used as a supporting factor in diagnosing various disorders. For example, the sweaty foot odor of patients with isovaleric acidemia {cite}`fitzgerald2021`. The strains of micro-organisms investigated in this study include: *Staphylococcus aureus*, *P. aeruginosa*, and *E. coli*, all of which are responsible for severe infections in diabetic foot ulcers (DFUs.) The severity and duration of the DFU is closely associated with species and strain-level microbial diversity in the infection {cite}`ABDULRAZAK2005138`. Rapid, non-invasive techniques for pathogenic bacterial volatiles in wounds could increase patient turnover.
 
-:::{note}
-Here is a note!
-:::
-
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+In the following Jupyter Book, we aim to find patterns within the data supplied by {cite}`fitzgerald_morrin_holland_2021`. We will be using both Google's AutoML Tables, and a machine learning algorithm called 'Random Forests' to identify patterns within the Gas Chromatography - Mass Spectrometry data. Our goal is to contrast and compare the performance of AutoML against a more traditional machine learning framework.
