@@ -23,7 +23,7 @@ from sklearn.preprocessing import StandardScaler
 raw = pd.read_excel("../data/FrontiersDS.xlsx", sheet_name="Wide", skiprows=3)
 
 
-# In[7]:
+# In[3]:
 
 
 raw.head()
@@ -59,7 +59,7 @@ raw.Strain.unique()
 # In[27]:
 
 
-raw.to_csv('data/cleaned/long.csv', index=False)
+raw.to_csv('../data/cleaned/long.csv', index=False)
 
 
 # ## Seperate By Media
@@ -135,5 +135,5 @@ pca_lb.to_csv('../data/cleaned/lb_components.csv', index=False)
 # In[20]:
 
 
-pca_full.to_csv('data/cleaned/full_components.csv', index=False)
+pca_full.to_csv('../data/cleaned/full_components.csv', index=False)
 

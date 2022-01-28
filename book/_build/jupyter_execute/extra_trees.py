@@ -35,18 +35,18 @@ from matplotlib import pyplot
 
 
 #get data
-raw = pd.read_csv('data/cleaned/long.csv')
+raw = pd.read_csv('../data/cleaned/long.csv')
 filled = raw.fillna(0)
 
 
-# In[136]:
+# In[4]:
 
 
 #store results from formula below
 vary_trees = pd.DataFrame(columns=["mean","std"])
 
 
-# In[145]:
+# In[5]:
 
 
 # get a list of models to evaluate
@@ -82,11 +82,11 @@ pyplot.boxplot(results, labels=names, showmeans=True)
 pyplot.title('Varying The Amount of Trees')
 pyplot.xlabel('Number of Trees')
 pyplot.ylabel('Accuracy')
-pyplot.savefig('images/ex_tree/vary_trees.png')
+pyplot.savefig('../images/ex_tree/vary_trees.png')
 pyplot.show()
 
 
-# In[146]:
+# In[6]:
 
 
 #find average of all stored results
@@ -106,7 +106,7 @@ avg_vary_trees.sort_values(by='mean', ascending=0).head(7)
 # In[148]:
 
 
-avg_vary_trees.to_csv('data/cleaned/ex_trees/avg_vary_trees.csv', index=True)
+avg_vary_trees.to_csv('../data/cleaned/ex_trees/avg_vary_trees.csv', index=True)
 
 
 # In[149]:
@@ -119,7 +119,7 @@ pyplot.xlabel('Number of Trees')
 pyplot.ylabel('Accuracy')
 pyplot.legend()
 pyplot.yticks(ticks=np.arange(0,1.1,0.1))
-pyplot.savefig('images/ex_tree/vary_trees2.png')
+pyplot.savefig('../images/ex_tree/vary_trees2.png')
 pyplot.show()
 
 
@@ -188,7 +188,7 @@ avg_vary_feat.sort_values(by='mean', ascending=0)
 # In[169]:
 
 
-avg_vary_feat.to_csv('data/cleaned/ex_trees/avg_vary_feat.csv', index=True)
+avg_vary_feat.to_csv('../data/cleaned/ex_trees/avg_vary_feat.csv', index=True)
 
 
 # In[170]:
@@ -203,7 +203,7 @@ pyplot.ylabel('Accuracy')
 pyplot.legend()
 pyplot.yticks(ticks=np.arange(0,1.1,0.1))
 pyplot.xticks(ticks=np.arange(0,66,5))
-pyplot.savefig('images/ex_tree/vary_features2.png')
+pyplot.savefig('../images/ex_tree/vary_features2.png')
 pyplot.show()
 
 
@@ -276,14 +276,14 @@ pyplot.xlabel('Number of Splits')
 pyplot.ylabel('Accuracy')
 pyplot.legend()
 pyplot.yticks(ticks=np.arange(0,1.1,0.1))
-pyplot.savefig('images/ex_tree/vary_splits2.png')
+pyplot.savefig('../images/ex_tree/vary_splits2.png')
 pyplot.show()
 
 
 # In[177]:
 
 
-avg_min_trees.to_csv('data/cleaned/ex_trees/avg_min_split.csv', index=True)
+avg_min_trees.to_csv('../data/cleaned/ex_trees/avg_min_split.csv', index=True)
 
 
 # ## Best Performing Model According to experimentation

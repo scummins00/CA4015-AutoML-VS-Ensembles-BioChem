@@ -22,19 +22,19 @@ import matplotlib.pyplot as plt
 
 
 #get data
-raw = pd.read_csv('data/cleaned/long.csv')
+raw = pd.read_csv('../data/cleaned/long.csv')
 filled = raw.fillna(0)
 
 
 # ## Evaluating the Model with different bootstrapping sample sizes
 
-# In[6]:
+# In[3]:
 
 
 sample_size = pd.DataFrame(columns=["mean","std"])
 
 
-# In[71]:
+# In[4]:
 
 
 # get a list of models to evaluate
@@ -82,7 +82,7 @@ plt.boxplot(results, labels=names, showmeans=True)
 plt.show()
 
 
-# In[72]:
+# In[5]:
 
 
 #find average of all stored results
@@ -103,7 +103,7 @@ avg_sample_size.sort_values(by='mean', ascending=0).head(7)
 # In[74]:
 
 
-avg_sample_size.to_csv('data/cleaned/rnd_forest/avg_sample_size.csv', index=True)
+avg_sample_size.to_csv('../data/cleaned/rnd_forest/avg_sample_size.csv', index=True)
 
 
 # In[75]:
@@ -117,7 +117,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.yticks(ticks=np.arange(0,1.1,0.1))
 
-plt.savefig('images/rnd_forest/vary_sample_size.png')
+plt.savefig('../images/rnd_forest/vary_sample_size.png')
 plt.show()
 
 
@@ -193,7 +193,7 @@ avg_avg_k_fold.sort_values(by='mean', ascending=0)
 # In[99]:
 
 
-avg_avg_k_fold.to_csv('data/cleaned/rnd_forest/avg_vary_feat.csv', index=True)
+avg_avg_k_fold.to_csv('../data/cleaned/rnd_forest/avg_vary_feat.csv', index=True)
 
 
 # In[100]:
@@ -208,7 +208,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.yticks(ticks=np.arange(0,1.1,0.1))
 plt.xticks(ticks=np.arange(0,66,5))
-plt.savefig('images/rnd_forest/vary_features.png')
+plt.savefig('../images/rnd_forest/vary_features.png')
 plt.show()
 
 
@@ -297,7 +297,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.yticks(ticks=np.arange(0,1.1,0.1))
 
-plt.savefig('images/rnd_forest/vary_trees.png')
+plt.savefig('../images/rnd_forest/vary_trees.png')
 plt.show()
 
 

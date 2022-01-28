@@ -16,15 +16,15 @@ from matplotlib import pyplot as plt
 
 
 #Read in our datasets
-pca_tsb = pd.read_csv('data/cleaned/tsb_components.csv')
-pca_bhi = pd.read_csv('data/cleaned/bhi_components.csv')
-pca_lb = pd.read_csv('data/cleaned/lb_components.csv')
-pca_full = pd.read_csv('data/cleaned/full_components.csv')
+pca_tsb = pd.read_csv('../data/cleaned/tsb_components.csv')
+pca_bhi = pd.read_csv('../data/cleaned/bhi_components.csv')
+pca_lb = pd.read_csv('../data/cleaned/lb_components.csv')
+pca_full = pd.read_csv('../data/cleaned/full_components.csv')
 
 
 # We firstly define a clustering function which we will use to create a visualisation for each of our compounds.
 
-# In[50]:
+# In[3]:
 
 
 def plot_clustering(X_red, labels, title=None):
@@ -45,12 +45,12 @@ def plot_clustering(X_red, labels, title=None):
     plt.hlines(0,xmin=-20, xmax=20, linestyles='dotted')
     plt.vlines(0,ymin=-20, ymax=20, linestyles='dotted')
     plt.grid()
-    plt.savefig('images/tsb_pca_cluster.png')
+    plt.savefig('../images/tsb_pca_cluster.png')
 
 
 # ## TSB Cluster
 
-# In[51]:
+# In[4]:
 
 
 from sklearn.cluster import AgglomerativeClustering
@@ -63,7 +63,7 @@ plot_clustering(pca_tsb, clustering.labels_)
 
 # ## BHI Cluster
 
-# In[49]:
+# In[5]:
 
 
 from sklearn.cluster import AgglomerativeClustering
@@ -76,7 +76,7 @@ plot_clustering(pca_bhi, clustering.labels_)
 
 # ## LB Cluster
 
-# In[45]:
+# In[6]:
 
 
 from sklearn.cluster import AgglomerativeClustering
@@ -89,7 +89,7 @@ plot_clustering(pca_lb, clustering.labels_)
 
 # ## All Clustered
 
-# In[47]:
+# In[7]:
 
 
 from sklearn.cluster import AgglomerativeClustering
