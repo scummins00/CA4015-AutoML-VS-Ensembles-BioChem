@@ -17,57 +17,43 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-#get data
-raw = pd.read_csv('data/cleaned/long.csv')
-filled = raw.fillna(0)
+#find average of all stored results
+avg_vary_trees = pd.DataFrame(columns=['mean', 'std', 'time'])
+for i in [10, 50, 100, 150, 200, 250, 300, 350, 500, 750, 1000]:
+    i = str(i)
+    s = pd.Series(vary_trees.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    avg_vary_trees = avg_vary_trees.append(s)
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp/ipykernel_18616/2093705766.py[0m in [0;36m<module>[1;34m[0m
-[0;32m      1[0m [1;31m#get data[0m[1;33m[0m[1;33m[0m[1;33m[0m[0m
-[1;32m----> 2[1;33m [0mraw[0m [1;33m=[0m [0mpd[0m[1;33m.[0m[0mread_csv[0m[1;33m([0m[1;34m'data/cleaned/long.csv'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      3[0m [0mfilled[0m [1;33m=[0m [0mraw[0m[1;33m.[0m[0mfillna[0m[1;33m([0m[1;36m0[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp/ipykernel_3220/710352766.py[0m in [0;36m<module>[1;34m[0m
+[0;32m      3[0m [1;32mfor[0m [0mi[0m [1;32min[0m [1;33m[[0m[1;36m10[0m[1;33m,[0m [1;36m50[0m[1;33m,[0m [1;36m100[0m[1;33m,[0m [1;36m150[0m[1;33m,[0m [1;36m200[0m[1;33m,[0m [1;36m250[0m[1;33m,[0m [1;36m300[0m[1;33m,[0m [1;36m350[0m[1;33m,[0m [1;36m500[0m[1;33m,[0m [1;36m750[0m[1;33m,[0m [1;36m1000[0m[1;33m][0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m     [0mi[0m [1;33m=[0m [0mstr[0m[1;33m([0m[0mi[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m----> 5[1;33m     [0ms[0m [1;33m=[0m [0mpd[0m[1;33m.[0m[0mSeries[0m[1;33m([0m[0mvary_trees[0m[1;33m.[0m[0mT[0m[1;33m[[0m[0mi[0m[1;33m][0m[1;33m.[0m[0mmean[0m[1;33m([0m[0maxis[0m[1;33m=[0m[1;36m1[0m[1;33m)[0m[1;33m,[0m [0mname[0m[1;33m=[0m[0mi[0m[1;33m,[0m [0mindex[0m[1;33m=[0m[1;33m[[0m[1;34m'mean'[0m[1;33m,[0m[1;34m'std'[0m[1;33m,[0m [1;34m'time'[0m[1;33m][0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      6[0m     [0mavg_vary_trees[0m [1;33m=[0m [0mavg_vary_trees[0m[1;33m.[0m[0mappend[0m[1;33m([0m[0ms[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
 
-[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py[0m in [0;36mparser_f[1;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)[0m
-[0;32m    674[0m         )
-[0;32m    675[0m [1;33m[0m[0m
-[1;32m--> 676[1;33m         [1;32mreturn[0m [0m_read[0m[1;33m([0m[0mfilepath_or_buffer[0m[1;33m,[0m [0mkwds[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m    677[0m [1;33m[0m[0m
-[0;32m    678[0m     [0mparser_f[0m[1;33m.[0m[0m__name__[0m [1;33m=[0m [0mname[0m[1;33m[0m[1;33m[0m[0m
+[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py[0m in [0;36mstat_func[1;34m(self, axis, skipna, level, numeric_only, **kwargs)[0m
+[0;32m  11212[0m         [1;32mif[0m [0mlevel[0m [1;32mis[0m [1;32mnot[0m [1;32mNone[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m  11213[0m             [1;32mreturn[0m [0mself[0m[1;33m.[0m[0m_agg_by_level[0m[1;33m([0m[0mname[0m[1;33m,[0m [0maxis[0m[1;33m=[0m[0maxis[0m[1;33m,[0m [0mlevel[0m[1;33m=[0m[0mlevel[0m[1;33m,[0m [0mskipna[0m[1;33m=[0m[0mskipna[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m> 11214[1;33m         return self._reduce(
+[0m[0;32m  11215[0m             [0mf[0m[1;33m,[0m [0mname[0m[1;33m,[0m [0maxis[0m[1;33m=[0m[0maxis[0m[1;33m,[0m [0mskipna[0m[1;33m=[0m[0mskipna[0m[1;33m,[0m [0mnumeric_only[0m[1;33m=[0m[0mnumeric_only[0m[1;33m[0m[1;33m[0m[0m
+[0;32m  11216[0m         )
 
-[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py[0m in [0;36m_read[1;34m(filepath_or_buffer, kwds)[0m
-[0;32m    446[0m [1;33m[0m[0m
-[0;32m    447[0m     [1;31m# Create the parser.[0m[1;33m[0m[1;33m[0m[1;33m[0m[0m
-[1;32m--> 448[1;33m     [0mparser[0m [1;33m=[0m [0mTextFileReader[0m[1;33m([0m[0mfp_or_buf[0m[1;33m,[0m [1;33m**[0m[0mkwds[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m    449[0m [1;33m[0m[0m
-[0;32m    450[0m     [1;32mif[0m [0mchunksize[0m [1;32mor[0m [0miterator[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\core\series.py[0m in [0;36m_reduce[1;34m(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)[0m
+[0;32m   3867[0m [1;33m[0m[0m
+[0;32m   3868[0m         [1;32mif[0m [0maxis[0m [1;32mis[0m [1;32mnot[0m [1;32mNone[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 3869[1;33m             [0mself[0m[1;33m.[0m[0m_get_axis_number[0m[1;33m([0m[0maxis[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   3870[0m [1;33m[0m[0m
+[0;32m   3871[0m         [1;32mif[0m [0misinstance[0m[1;33m([0m[0mdelegate[0m[1;33m,[0m [0mCategorical[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
 
-[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py[0m in [0;36m__init__[1;34m(self, f, engine, **kwds)[0m
-[0;32m    878[0m             [0mself[0m[1;33m.[0m[0moptions[0m[1;33m[[0m[1;34m"has_index_names"[0m[1;33m][0m [1;33m=[0m [0mkwds[0m[1;33m[[0m[1;34m"has_index_names"[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
-[0;32m    879[0m [1;33m[0m[0m
-[1;32m--> 880[1;33m         [0mself[0m[1;33m.[0m[0m_make_engine[0m[1;33m([0m[0mself[0m[1;33m.[0m[0mengine[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m    881[0m [1;33m[0m[0m
-[0;32m    882[0m     [1;32mdef[0m [0mclose[0m[1;33m([0m[0mself[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py[0m in [0;36m_get_axis_number[1;34m(cls, axis)[0m
+[0;32m    405[0m             [1;32mexcept[0m [0mKeyError[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    406[0m                 [1;32mpass[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 407[1;33m         [1;32mraise[0m [0mValueError[0m[1;33m([0m[1;34mf"No axis named {axis} for object type {cls}"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    408[0m [1;33m[0m[0m
+[0;32m    409[0m     [1;33m@[0m[0mclassmethod[0m[1;33m[0m[1;33m[0m[0m
 
-[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py[0m in [0;36m_make_engine[1;34m(self, engine)[0m
-[0;32m   1112[0m     [1;32mdef[0m [0m_make_engine[0m[1;33m([0m[0mself[0m[1;33m,[0m [0mengine[0m[1;33m=[0m[1;34m"c"[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
-[0;32m   1113[0m         [1;32mif[0m [0mengine[0m [1;33m==[0m [1;34m"c"[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
-[1;32m-> 1114[1;33m             [0mself[0m[1;33m.[0m[0m_engine[0m [1;33m=[0m [0mCParserWrapper[0m[1;33m([0m[0mself[0m[1;33m.[0m[0mf[0m[1;33m,[0m [1;33m**[0m[0mself[0m[1;33m.[0m[0moptions[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m   1115[0m         [1;32melse[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
-[0;32m   1116[0m             [1;32mif[0m [0mengine[0m [1;33m==[0m [1;34m"python"[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
-
-[1;32m~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py[0m in [0;36m__init__[1;34m(self, src, **kwds)[0m
-[0;32m   1889[0m         [0mkwds[0m[1;33m[[0m[1;34m"usecols"[0m[1;33m][0m [1;33m=[0m [0mself[0m[1;33m.[0m[0musecols[0m[1;33m[0m[1;33m[0m[0m
-[0;32m   1890[0m [1;33m[0m[0m
-[1;32m-> 1891[1;33m         [0mself[0m[1;33m.[0m[0m_reader[0m [1;33m=[0m [0mparsers[0m[1;33m.[0m[0mTextReader[0m[1;33m([0m[0msrc[0m[1;33m,[0m [1;33m**[0m[0mkwds[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m   1892[0m         [0mself[0m[1;33m.[0m[0munnamed_cols[0m [1;33m=[0m [0mself[0m[1;33m.[0m[0m_reader[0m[1;33m.[0m[0munnamed_cols[0m[1;33m[0m[1;33m[0m[0m
-[0;32m   1893[0m [1;33m[0m[0m
-
-[1;32mpandas\_libs\parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader.__cinit__[1;34m()[0m
-
-[1;32mpandas\_libs\parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader._setup_parser_source[1;34m()[0m
-
-[1;31mFileNotFoundError[0m: [Errno 2] File data/cleaned/long.csv does not exist: 'data/cleaned/long.csv'
-FileNotFoundError: [Errno 2] File data/cleaned/long.csv does not exist: 'data/cleaned/long.csv'
+[1;31mValueError[0m: No axis named 1 for object type <class 'pandas.core.series.Series'>
+ValueError: No axis named 1 for object type <class 'pandas.core.series.Series'>
 
