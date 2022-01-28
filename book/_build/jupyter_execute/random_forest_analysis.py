@@ -90,23 +90,23 @@ avg_sample_size = pd.DataFrame(columns=['mean', 'std', 'time'])
 for i in np.arange(0.1, 1.1, 0.1):
     i = str(i)
     i = i[0: 3]
-    s = pd.Series(sample_size.T[i].mean(axis=1), name=i, index=['mean','std','time'])
+    s = pd.Series(sample_size.T[i][0], name=i, index=['mean','std','time'])
     avg_sample_size = avg_sample_size.append(s)
 
 
-# In[73]:
+# In[6]:
 
 
 avg_sample_size.sort_values(by='mean', ascending=0).head(7)
 
 
-# In[74]:
+# In[7]:
 
 
 avg_sample_size.to_csv('../data/cleaned/rnd_forest/avg_sample_size.csv', index=True)
 
 
-# In[75]:
+# In[8]:
 
 
 line1 = plt.plot(avg_sample_size.index, avg_sample_size['mean'], label='Mean', c='darkcyan')
@@ -123,13 +123,13 @@ plt.show()
 
 # ## Evaluating the Model with different Feature selection sizes (random subspace method)
 
-# In[76]:
+# In[9]:
 
 
 avg_scores_k_fold = pd.DataFrame(columns=["mean","std","time"])
 
 
-# In[93]:
+# In[10]:
 
 
 # get a list of models to evaluate
@@ -173,7 +173,7 @@ plt.boxplot(results, labels=names, showmeans=True)
 plt.show()
 
 
-# In[97]:
+# In[11]:
 
 
 avg_avg_k_fold = pd.DataFrame(columns=['mean', 'std', 'time'])

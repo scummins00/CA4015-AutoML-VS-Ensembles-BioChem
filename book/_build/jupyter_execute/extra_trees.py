@@ -93,23 +93,23 @@ pyplot.show()
 avg_vary_trees = pd.DataFrame(columns=['mean', 'std', 'time'])
 for i in [10, 50, 100, 150, 200, 250, 300, 350, 500, 750, 1000]:
     i = str(i)
-    s = pd.Series(vary_trees.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    s = pd.Series(vary_trees.T[i][0], name=str(i), index=['mean','std', 'time'])
     avg_vary_trees = avg_vary_trees.append(s)
 
 
-# In[147]:
+# In[7]:
 
 
 avg_vary_trees.sort_values(by='mean', ascending=0).head(7)
 
 
-# In[148]:
+# In[8]:
 
 
 avg_vary_trees.to_csv('../data/cleaned/ex_trees/avg_vary_trees.csv', index=True)
 
 
-# In[149]:
+# In[9]:
 
 
 line1 = pyplot.plot(avg_vary_trees.index, avg_vary_trees['mean'], label='Mean')
@@ -125,14 +125,14 @@ pyplot.show()
 
 # ## Explore different amounts of features
 
-# In[150]:
+# In[10]:
 
 
 #store results from formula below
 vary_feat = pd.DataFrame(columns=["mean","std"])
 
 
-# In[166]:
+# In[11]:
 
 
 # get a list of models to evaluate
@@ -168,7 +168,7 @@ pyplot.boxplot(results, labels=names, showmeans=True)
 pyplot.show()
 
 
-# In[167]:
+# In[12]:
 
 
 #find average of all stored results

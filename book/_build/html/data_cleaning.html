@@ -274,45 +274,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../data/FrontiersDS.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Wide&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14576</span><span class="o">/</span><span class="mf">1211535765.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../data/FrontiersDS.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Wide&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\excel\_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> 
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\excel\_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, io, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">822</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_io</span> <span class="o">=</span> <span class="n">stringify_path</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">823</span> 
-<span class="ne">--&gt; </span><span class="mi">824</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span> 
-<span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="k">def</span> <span class="nf">__fspath__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\excel\_xlrd.py</span> in <span class="ni">__init__</span><span class="nt">(self, filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="s2">         err_msg = &quot;Install xlrd &gt;= 1.0.0 for Excel support&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">20</span><span class="s2">         import_optional_dependency(&quot;xlrd&quot;, extra=err_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="s2">         super().__init__(filepath_or_buffer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="s2"> </span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\compat\_optional.py</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, raise_on_missing, on_version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">     except ImportError:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">         if raise_on_missing:</span>
-<span class="ne">---&gt; </span><span class="mi">92</span><span class="s2">             raise ImportError(msg) from None</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span><span class="s2">             return None</span>
-
-<span class="ne">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/wide_frontier.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

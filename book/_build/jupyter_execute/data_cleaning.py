@@ -20,7 +20,7 @@ from sklearn.preprocessing import StandardScaler
 # In[2]:
 
 
-raw = pd.read_excel("../data/FrontiersDS.xlsx", sheet_name="Wide", skiprows=3)
+raw = pd.read_csv("../data/wide_frontier.csv")
 
 
 # In[3]:
@@ -41,7 +41,7 @@ raw.head()
 # ## Encoding
 # We must ensure that the target variable is also presented as an integer. To do this, we use SKLearns label encoder. This creates a 1 to 1 mapping between the target values and integers.
 
-# In[8]:
+# In[4]:
 
 
 le = preprocessing.LabelEncoder()
@@ -49,14 +49,14 @@ le.fit(raw.Strain)
 list(le.classes_)
 
 
-# In[9]:
+# In[5]:
 
 
 raw.Strain = le.transform(raw.Strain)
 raw.Strain.unique()
 
 
-# In[27]:
+# In[6]:
 
 
 raw.to_csv('../data/cleaned/long.csv', index=False)
@@ -65,13 +65,13 @@ raw.to_csv('../data/cleaned/long.csv', index=False)
 # ## Seperate By Media
 # Let's divide the dataset by media to perform per-media analysis of clusters 
 
-# In[10]:
+# In[7]:
 
 
 filled = raw.fillna(0)
 
 
-# In[11]:
+# In[8]:
 
 
 tsb = filled[filled['Samples '].str.contains("TSB")]
@@ -82,7 +82,7 @@ lb = filled[filled['Samples '].str.contains("LB")]
 # ## Standardization
 # We will be performing PCA for feature reduction. This will allow us to better cluster the data later on. The sklearn implimentation of PCA does not handle NaN values. We will let all NaN values equal 0 to perform PCA.
 
-# In[12]:
+# In[9]:
 
 
 tsb_features = tsb.iloc[:,3:]
@@ -98,7 +98,7 @@ x4 = StandardScaler().fit_transform(full_features)
 
 # ## Principal Component Analysis
 
-# In[13]:
+# In[10]:
 
 
 #Now let's perform PCA
@@ -108,7 +108,7 @@ principalComponents = pca.fit_transform(x4)
 principalDf = pd.DataFrame(data = principalComponents, columns = ['principal component 1', 'principal component 2'])
 
 
-# In[15]:
+# In[11]:
 
 
 #Let's rejoin the columns describing the data
@@ -117,13 +117,13 @@ pca_bhi = pd.concat([principalDf, bhi[['Species', 'Strain', 'Samples ']].reset_i
 pca_lb = pd.concat([principalDf, lb[['Species', 'Strain', 'Samples ']].reset_index(drop=True)], axis = 1)
 
 
-# In[16]:
+# In[12]:
 
 
 pca_full = pd.concat([principalDf, filled[['Species', 'Strain', 'Samples ']].reset_index(drop=True)], axis = 1)
 
 
-# In[18]:
+# In[13]:
 
 
 #Let's write out our datta
@@ -132,7 +132,7 @@ pca_bhi.to_csv('../data/cleaned/bhi_components.csv', index=False)
 pca_lb.to_csv('../data/cleaned/lb_components.csv', index=False)
 
 
-# In[20]:
+# In[14]:
 
 
 pca_full.to_csv('../data/cleaned/full_components.csv', index=False)
