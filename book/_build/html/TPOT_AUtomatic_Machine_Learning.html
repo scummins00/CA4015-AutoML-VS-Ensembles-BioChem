@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/TPOT_AUtomatic_Machine_Learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/scummins00/CA4015-AutoML-VS-Ensembles-BioChem"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/scummins00/CA4015-AutoML-VS-Ensembles-BioChem/issues/new?title=Issue%20on%20page%20%2FTPOT_AUtomatic_Machine_Learning.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/scummins00/CA4015-AutoML-VS-Ensembles-BioChem/master?urlpath=tree/docs/TPOT_AUtomatic_Machine_Learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install TPOT</span>
+<span class="o">!</span>pip install tpot
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tpot in c:\users\seanc\appdata\roaming\python\python38\site-packages (0.11.7)
+Requirement already satisfied: pandas&gt;=0.24.2 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.0.5)
+Requirement already satisfied: scipy&gt;=1.3.1 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.5.1)
+Requirement already satisfied: joblib&gt;=0.13.2 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (0.17.0)
+Requirement already satisfied: tqdm&gt;=4.36.1 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (4.47.0)
+Requirement already satisfied: update-checker&gt;=0.16 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (0.18.0)
+Requirement already satisfied: stopit&gt;=1.1.1 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.1.2)
+Requirement already satisfied: scikit-learn&gt;=0.22.0 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (0.23.1)
+Requirement already satisfied: deap&gt;=1.2 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.3.1)
+Requirement already satisfied: xgboost&gt;=1.1.0 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.5.0)
+Requirement already satisfied: numpy&gt;=1.16.3 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from tpot) (1.19.0)
+Requirement already satisfied: pytz&gt;=2017.2 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from pandas&gt;=0.24.2-&gt;tpot) (2020.1)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from pandas&gt;=0.24.2-&gt;tpot) (2.8.1)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from scikit-learn&gt;=0.22.0-&gt;tpot) (2.1.0)
+Requirement already satisfied: requests&gt;=2.3.0 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from update-checker&gt;=0.16-&gt;tpot) (2.24.0)
+Requirement already satisfied: six&gt;=1.5 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from python-dateutil&gt;=2.6.1-&gt;pandas&gt;=0.24.2-&gt;tpot) (1.15.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from requests&gt;=2.3.0-&gt;update-checker&gt;=0.16-&gt;tpot) (2020.6.20)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from requests&gt;=2.3.0-&gt;update-checker&gt;=0.16-&gt;tpot) (2.10)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from requests&gt;=2.3.0-&gt;update-checker&gt;=0.16-&gt;tpot) (1.25.11)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in c:\users\seanc\appdata\roaming\python\python38\site-packages (from requests&gt;=2.3.0-&gt;update-checker&gt;=0.16-&gt;tpot) (3.0.4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s import our remaining packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Import the tpot regressor</span>
+<span class="kn">from</span> <span class="nn">tpot</span> <span class="kn">import</span> <span class="n">TPOTClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read in our data (If above not working) you must import the file yourself.</span>
+<span class="c1">#File will be deleted once GPU runtime expires.</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/long.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14052</span><span class="o">/</span><span class="mf">3394291571.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Read in our data (If above not working) you must import the file yourself.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#File will be deleted once GPU runtime expires.</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/long.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py</span> in <span class="ni">parser_f</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span> 
+<span class="ne">--&gt; </span><span class="mi">676</span>         <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span> 
+<span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="n">parser_f</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> 
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">448</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> 
+<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span> 
+<span class="ne">--&gt; </span><span class="mi">880</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span> 
+<span class="g g-Whitespace">    </span><span class="mi">882</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1112</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1113</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1114</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1115</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1116</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\io\parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> 
+<span class="ne">-&gt; </span><span class="mi">1891</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1892</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">1893</span> 
+
+<span class="nn">pandas\_libs\parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas\_libs\parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] File data/cleaned/long.csv does not exist: &#39;data/cleaned/long.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Extract our training labels</span>
+<span class="n">train_labels</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">Strain</span>
+
+<span class="c1">#Extract our training</span>
+<span class="n">train_features</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Species&quot;</span><span class="p">,</span> <span class="s2">&quot;Strain&quot;</span><span class="p">,</span> <span class="s2">&quot;Samples &quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert to &#39;numpy&#39; arrays</span>
+<span class="n">training_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">)</span>
+<span class="n">training_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Build the TPOT framework</span>
+<span class="n">tpot</span> <span class="o">=</span> <span class="n">TPOTClassifier</span><span class="p">(</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;neg_mean_absolute_error&#39;</span><span class="p">,</span>
+                      <span class="n">max_time_mins</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+                      <span class="n">config_dict</span><span class="o">=</span><span class="s1">&#39;TPOT sparse&#39;</span><span class="p">,</span>
+                      <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">verbosity</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="n">cv</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the tpot model on the training data</span>
+<span class="n">tpot</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_features</span><span class="p">,</span> <span class="n">training_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputing missing values in feature set
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2c6e06fe2ec64499ac073146f035f3ff", "version_major": 2, "version_minor": 0}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">_RemoteTraceback</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="ne">_Remote</span>Traceback: 
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Traceback (most recent call last):</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\joblib\externals\loky\process_executor.py&quot;, line 404, in _process_worker</span>
+<span class="sd">    call_item = call_queue.get(block=True, timeout=timeout)</span>
+<span class="sd">  File &quot;C:\Users\seanc\anaconda3\lib\multiprocessing\queues.py&quot;, line 116, in get</span>
+<span class="sd">    return _ForkingPickler.loads(res)</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\tpot\__init__.py&quot;, line 27, in &lt;module&gt;</span>
+<span class="sd">    from .tpot import TPOTClassifier, TPOTRegressor</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\tpot\tpot.py&quot;, line 31, in &lt;module&gt;</span>
+<span class="sd">    from .base import TPOTBase</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\tpot\base.py&quot;, line 70, in &lt;module&gt;</span>
+<span class="sd">    from .builtins import CombineDFs, StackingEstimator</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\tpot\builtins\__init__.py&quot;, line 33, in &lt;module&gt;</span>
+<span class="sd">    from .nn import PytorchLRClassifier, PytorchMLPClassifier</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\tpot\builtins\nn.py&quot;, line 43, in &lt;module&gt;</span>
+<span class="sd">    import torch</span>
+<span class="sd">  File &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\torch\__init__.py&quot;, line 116, in &lt;module&gt;</span>
+<span class="sd">    raise err</span>
+<span class="ne">OSError</span>: [WinError 1455] The paging file is too small for this operation to complete. Error loading &quot;C:\Users\seanc\AppData\Roaming\Python\Python38\site-packages\torch\lib\caffe2_detectron_ops_gpu.dll&quot; or one of its dependencies.
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">BrokenProcessPool</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\base.py</span> in <span class="ni">fit</span><span class="nt">(self, features, target, sample_weight, groups)</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">816</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_pop</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">eaMuPlusLambda</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>                     <span class="n">population</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pop</span><span class="p">,</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\gp_deap.py</span> in <span class="ni">eaMuPlusLambda</span><span class="nt">(population, toolbox, mu, lambda_, cxpb, mutpb, ngen, pbar, stats, halloffame, verbose, per_generation_function, log_file)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span> 
+<span class="ne">--&gt; </span><span class="mi">228</span>     <span class="n">population</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span> 
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\base.py</span> in <span class="ni">_evaluate_individuals</span><span class="nt">(self, population, features, target, sample_weight, groups)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1566</span>                         <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1567</span>                         <span class="n">tmp_result_scores</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1568</span>                             <span class="n">delayed</span><span class="p">(</span><span class="n">partial_wrapped_cross_val_score</span><span class="p">)(</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\joblib\parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1060</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1061</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>             <span class="c1"># Make sure that we get a last message telling us we are done</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\joblib\parallel.py</span> in <span class="ni">retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span>                 <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="s1">&#39;supports_timeout&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">940</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">941</span>                 <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\joblib\_parallel_backends.py</span> in <span class="ni">wrap_future_result</span><span class="nt">(future, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">542</span>             <span class="k">return</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>         <span class="k">except</span> <span class="n">CfTimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">~\anaconda3\lib\concurrent\futures\_base.py</span> in <span class="ni">result</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>             <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">FINISHED</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">439</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_result</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>             <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~\anaconda3\lib\concurrent\futures\_base.py</span> in <span class="ni">__get_result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">388</span>             <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">BrokenProcessPool</span>: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_15084</span><span class="o">/</span><span class="mf">1264009499.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Fit the tpot model on the training data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tpot</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_features</span><span class="p">,</span> <span class="n">training_labels</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\base.py</span> in <span class="ni">fit</span><span class="nt">(self, features, target, sample_weight, groups)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>                     <span class="c1"># raise the exception if it&#39;s our last attempt</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>                     <span class="k">if</span> <span class="n">attempt</span> <span class="o">==</span> <span class="p">(</span><span class="n">attempts</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">863</span>                         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="k">return</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span> 
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\base.py</span> in <span class="ni">fit</span><span class="nt">(self, features, target, sample_weight, groups)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span> 
+<span class="ne">--&gt; </span><span class="mi">854</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_update_top_pipeline</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_summary_of_best_pipeline</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>                     <span class="c1"># Delete the temporary cache before exiting</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\tpot\base.py</span> in <span class="ni">_update_top_pipeline</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span>             <span class="c1"># If user passes CTRL+C in initial generation, self._pareto_front (halloffame) shoule be not updated yet.</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span>             <span class="c1"># need raise RuntimeError because no pipeline has been optimized</span>
+<span class="ne">--&gt; </span><span class="mi">961</span>             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span>                 <span class="s2">&quot;A pipeline has not yet been optimized. Please call fit() first.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span>             <span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: A pipeline has not yet been optimized. Please call fit() first.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the final model</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tpot</span><span class="o">.</span><span class="n">fitted_pipeline_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export the pipeline as a python script file</span>
+<span class="n">tpot</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s1">&#39;tpot_exported_pipeline.py&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
