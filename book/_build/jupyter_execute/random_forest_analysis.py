@@ -166,7 +166,7 @@ for name, model in models.items():
 	# summarize the performance along the way
 	s = pd.Series(data=[np.mean(scores), np.std(scores), np.mean(times)],name=name, index=['mean','std', 'time'])
 	avg_scores_k_fold = avg_scores_k_fold.append(s)
-	print('>%s %.3f (%.3f) (%.3f)' % (name, np.mean(scores), np.std(scores), np.mean(times)))
+
 # plot model performance for comparison
 plt.figure(figsize=(15,15))
 plt.boxplot(results, labels=names, showmeans=True)
@@ -180,23 +180,23 @@ avg_avg_k_fold = pd.DataFrame(columns=['mean', 'std', 'time'])
 
 for i in range (1,67):
     i = str(i)
-    s = pd.Series(avg_scores_k_fold.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    s = pd.Series(avg_scores_k_fold.T[i][0], name=i, index=['mean','std', 'time'])
     avg_avg_k_fold = avg_avg_k_fold.append(s)
 
 
-# In[98]:
+# In[12]:
 
 
 avg_avg_k_fold.sort_values(by='mean', ascending=0)
 
 
-# In[99]:
+# In[13]:
 
 
 avg_avg_k_fold.to_csv('../data/cleaned/rnd_forest/avg_vary_feat.csv', index=True)
 
 
-# In[100]:
+# In[14]:
 
 
 plt.figure(figsize=(15,7))
@@ -214,13 +214,13 @@ plt.show()
 
 # ## Different number of trees
 
-# In[89]:
+# In[15]:
 
 
 diff_trees = pd.DataFrame(columns=["mean","std", "time"])
 
 
-# In[94]:
+# In[16]:
 
 
 # get a list of models to evaluate
@@ -264,23 +264,23 @@ plt.boxplot(results, labels=names, showmeans=True)
 plt.show()
 
 
-# In[95]:
+# In[17]:
 
 
 avg_diff_trees = pd.DataFrame(columns=['mean', 'std', 'time'])
 for i in [10, 50, 100, 150, 200, 250, 350, 400, 450, 500]:
     i = str(i)
-    s = pd.Series(diff_trees.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    s = pd.Series(diff_trees.T[i][0], name=i, index=['mean','std', 'time'])
     avg_diff_trees = avg_diff_trees.append(s)
 
 
-# In[101]:
+# In[18]:
 
 
 avg_diff_trees.sort_values(by='mean', ascending=0).head(10)
 
 
-# In[103]:
+# In[19]:
 
 
 avg_diff_trees.to_csv('data/cleaned/rnd_forest/avg_vary_trees.csv', index=True)
@@ -330,7 +330,6 @@ for i in range(50):
     names.append(name)
     s = pd.Series(data=[np.mean(scores), np.std(scores)],name=name, index=['mean accuracy','mean std'])
     final_results = final_results.append(s)
-    print('>%s %.3f (%.3f)' % (i, np.mean(scores), np.std(scores)))
 
 
 # In[118]:

@@ -162,7 +162,7 @@ for name, model in models.items():
 	# summarize the performance along the way
 	s = pd.Series(data=[np.mean(scores), np.std(scores), np.mean(times)],name=name, index=['mean','std', 'time'])
 	vary_feat = vary_feat.append(s)
-	print('>%s %.3f (%.3f) (%.3f)' % (name, np.mean(scores), np.std(scores), np.mean(times)))
+
 # plot model performance for comparison
 pyplot.boxplot(results, labels=names, showmeans=True)
 pyplot.show()
@@ -256,7 +256,7 @@ pyplot.show()
 avg_min_trees = pd.DataFrame(columns=['mean', 'std', 'time'])
 for i in range(2, 15):
     i = str(i)
-    s = pd.Series(min_trees.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    s = pd.Series(min_trees.T[i][0], name=i, index=['mean','std', 'time'])
     avg_min_trees = avg_min_trees.append(s)
 
 
@@ -314,7 +314,6 @@ for i in range(50):
     names.append(name)
     s = pd.Series(data=[np.mean(scores), np.std(scores)],name=name, index=['mean','std'])
     final_results = final_results.append(s)
-    print('>%s %.3f (%.3f)' % (i, np.mean(scores), np.std(scores)))
 
 
 # In[213]:
