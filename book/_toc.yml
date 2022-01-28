@@ -4,9 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-  -file: data_cleaning
-  -file: data_analysis
-  -file: random_forest_analysis
-  -file: extra_trees
-  -file: TPOT_AUtomatic_Machine_Learning
-  -file: bibliography.bib
+- file: data_cleaning
+- file: data_analysis
+- file: random_forest_analysis
+- file: extra_trees
+- file: TPOT_AUtomatic_Machine_Learning
+- file: bibliography.bib
