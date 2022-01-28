@@ -1,16 +1,8 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
+"Microbial volatimoics is a rapidly growing field of study and has shown great potential for applications in food, farming, and clinical sectors in the future." {cite}`fitzgerald_morrin_holland_2021`. The study of volatile organic compounds (VOCs) has emerged as a path to characterizing disease-specific volatiles. The occurence of disease-specific volatiles can be used as a supporting factor in diagnosing various disorders. For example, the sweaty foot odor of patients with isovaleric acidemia {cite}`fitzgerald2021`. The strains of micro-organisms investigated in this study include: *Staphylococcus aureus*, *P. aeruginosa*, and *E. coli*, all of which are responsible for severe infections in diabetic foot ulcers (DFUs.) The severity and duration of the DFU is closely associated with species and strain-level microbial diversity in the infection {cite}`ABDULRAZAK2005138`. Rapid, non-invasive techniques for pathogenic bacterial volatiles in wounds could increase patient turnover.
 
-:::{note}
-Here is a note!
-:::
+In the following Jupyter Book, we aim to find patterns within the data supplied by {cite}`fitzgerald_morrin_holland_2021`. We will be using TPOT, an automatic Machine Learning (ML) framework, and a ML algorithm called 'Random Forests' to identify patterns within the Gas Chromatography - Mass Spectrometry data. To extend our analysis, we will allow use another traditional ML algorithm, 'Extra Trees', and compare its results with our previously mentioned frameworks. The objectives of this study are two fold;
 
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+1. Firstly, we would like to investigate to what extent the occurence of volatiles is predictable.
+2. Secondly, we aim to perform a comparative study of AutoML frameworks vs traditional frameworks. We'll compare efficiency, easy of use, and resutls achieved.
