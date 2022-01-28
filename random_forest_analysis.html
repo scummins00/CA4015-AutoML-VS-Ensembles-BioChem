@@ -334,26 +334,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.1 0.601 (0.253) (1.280)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.1 0.606 (0.109) (1.291)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.2 0.689 (0.116) (1.061)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.2 0.724 (0.134) (1.032)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.3 0.758 (0.123) (0.908)
-&gt;0.4 0.774 (0.146) (0.721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.3 0.794 (0.137) (0.904)
+&gt;0.4 0.689 (0.172) (0.712)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.5 0.772 (0.099) (0.601)
-&gt;0.6 0.786 (0.146) (0.521)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.5 0.786 (0.144) (0.592)
+&gt;0.6 0.797 (0.152) (0.513)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.7 0.762 (0.138) (0.461)
-&gt;0.8 0.844 (0.106) (0.417)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.7 0.785 (0.127) (0.460)
+&gt;0.8 0.822 (0.079) (0.417)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.9 0.857 (0.089) (0.384)
-&gt;1.0 0.833 (0.120) (0.358)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;0.9 0.807 (0.136) (0.384)
+&gt;1.0 0.831 (0.127) (0.357)
 </pre></div>
 </div>
 <img alt="_images/random_forest_analysis_5_6.png" src="_images/random_forest_analysis_5_6.png" />
@@ -366,42 +366,8 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">):</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">]</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sample_size</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sample_size</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
     <span class="n">avg_sample_size</span> <span class="o">=</span> <span class="n">avg_sample_size</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_10872</span><span class="o">/</span><span class="mf">2138869680.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sample_size</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">avg_sample_size</span> <span class="o">=</span> <span class="n">avg_sample_size</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py</span> in <span class="ni">stat_func</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11212</span>         <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">  </span><span class="mi">11213</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">11214</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11215</span>             <span class="n">f</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">11216</span>         <span class="p">)</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\series.py</span> in <span class="ni">_reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3867</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3868</span>         <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3869</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3870</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3871</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">Categorical</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py</span> in <span class="ni">_get_axis_number</span><span class="nt">(cls, axis)</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>                 <span class="k">pass</span>
-<span class="ne">--&gt; </span><span class="mi">407</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No axis named </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2"> for object type </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> 
-<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="nd">@classmethod</span>
-
-<span class="ne">ValueError</span>: No axis named 1 for object type &lt;class &#39;pandas.core.series.Series&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -438,46 +404,46 @@
   </thead>
   <tbody>
     <tr>
-      <th>0.9</th>
-      <td>0.827685</td>
-      <td>0.124628</td>
-      <td>0.556522</td>
-    </tr>
-    <tr>
       <th>1.0</th>
-      <td>0.823426</td>
-      <td>0.120076</td>
-      <td>0.552975</td>
+      <td>0.830556</td>
+      <td>0.830556</td>
+      <td>0.830556</td>
     </tr>
     <tr>
       <th>0.8</th>
-      <td>0.810926</td>
-      <td>0.132435</td>
-      <td>0.560380</td>
+      <td>0.822222</td>
+      <td>0.822222</td>
+      <td>0.822222</td>
+    </tr>
+    <tr>
+      <th>0.9</th>
+      <td>0.806944</td>
+      <td>0.806944</td>
+      <td>0.806944</td>
     </tr>
     <tr>
       <th>0.6</th>
-      <td>0.808611</td>
-      <td>0.135817</td>
-      <td>0.568672</td>
+      <td>0.797222</td>
+      <td>0.797222</td>
+      <td>0.797222</td>
     </tr>
     <tr>
-      <th>0.7</th>
-      <td>0.806759</td>
-      <td>0.133849</td>
-      <td>0.565725</td>
+      <th>0.3</th>
+      <td>0.794444</td>
+      <td>0.794444</td>
+      <td>0.794444</td>
     </tr>
     <tr>
       <th>0.5</th>
-      <td>0.789630</td>
-      <td>0.147980</td>
-      <td>0.579429</td>
+      <td>0.786111</td>
+      <td>0.786111</td>
+      <td>0.786111</td>
     </tr>
     <tr>
-      <th>0.4</th>
-      <td>0.767315</td>
-      <td>0.141161</td>
-      <td>0.599781</td>
+      <th>0.7</th>
+      <td>0.784722</td>
+      <td>0.784722</td>
+      <td>0.784722</td>
     </tr>
   </tbody>
 </table>
@@ -564,75 +530,139 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1 0.800 (0.116) (0.486)
-&gt;2 0.761 (0.155) (0.516)
-&gt;3 0.772 (0.113) (0.532)
-&gt;4 0.856 (0.092) (0.530)
-&gt;5 0.797 (0.117) (0.529)
-&gt;6 0.832 (0.123) (0.528)
-&gt;7 0.831 (0.139) (0.537)
-&gt;8 0.810 (0.120) (0.563)
-&gt;9 0.819 (0.159) (0.570)
-&gt;10 0.868 (0.123) (0.579)
-&gt;11 0.821 (0.111) (0.584)
-&gt;12 0.833 (0.133) (0.590)
-&gt;13 0.869 (0.113) (0.595)
-&gt;14 0.821 (0.134) (0.609)
-&gt;15 0.869 (0.110) (0.615)
-&gt;16 0.844 (0.130) (0.617)
-&gt;17 0.843 (0.143) (0.628)
-&gt;18 0.831 (0.165) (0.628)
-&gt;19 0.868 (0.098) (0.626)
-&gt;20 0.822 (0.141) (0.624)
-&gt;21 0.832 (0.112) (0.624)
-&gt;22 0.844 (0.109) (0.623)
-&gt;23 0.797 (0.162) (0.624)
-&gt;24 0.858 (0.138) (0.626)
-&gt;25 0.821 (0.156) (0.627)
-&gt;26 0.858 (0.126) (0.636)
-&gt;27 0.808 (0.137) (0.638)
-&gt;28 0.832 (0.144) (0.637)
-&gt;29 0.856 (0.118) (0.636)
-&gt;30 0.844 (0.162) (0.635)
-&gt;31 0.857 (0.129) (0.634)
-&gt;32 0.832 (0.164) (0.634)
-&gt;33 0.856 (0.153) (0.634)
-&gt;34 0.808 (0.146) (0.634)
-&gt;35 0.844 (0.123) (0.639)
-&gt;36 0.846 (0.120) (0.642)
-&gt;37 0.857 (0.153) (0.642)
-&gt;38 0.844 (0.123) (0.642)
-&gt;39 0.796 (0.145) (0.642)
-&gt;40 0.832 (0.125) (0.643)
-&gt;41 0.821 (0.156) (0.643)
-&gt;42 0.819 (0.138) (0.644)
-&gt;43 0.835 (0.131) (0.646)
-&gt;44 0.796 (0.145) (0.653)
-&gt;45 0.844 (0.146) (0.654)
-&gt;46 0.869 (0.136) (0.655)
-&gt;47 0.844 (0.123) (0.657)
-&gt;48 0.833 (0.123) (0.659)
-&gt;49 0.857 (0.131) (0.659)
-&gt;50 0.846 (0.154) (0.660)
-&gt;51 0.822 (0.154) (0.660)
-&gt;52 0.856 (0.131) (0.664)
-&gt;53 0.821 (0.148) (0.668)
-&gt;54 0.844 (0.123) (0.668)
-&gt;55 0.821 (0.148) (0.669)
-&gt;56 0.821 (0.148) (0.669)
-&gt;57 0.833 (0.157) (0.669)
-&gt;58 0.818 (0.177) (0.669)
-&gt;59 0.844 (0.123) (0.669)
-&gt;60 0.869 (0.113) (0.671)
-&gt;61 0.856 (0.155) (0.672)
-&gt;62 0.857 (0.153) (0.673)
-&gt;63 0.835 (0.163) (0.674)
-&gt;64 0.833 (0.110) (0.674)
-&gt;65 0.846 (0.142) (0.675)
-&gt;66 0.808 (0.177) (0.675)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1 0.772 (0.169) (0.193)
+&gt;2 0.761 (0.138) (0.156)
 </pre></div>
 </div>
-<img alt="_images/random_forest_analysis_12_1.png" src="_images/random_forest_analysis_12_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;3 0.774 (0.175) (0.141)
+&gt;4 0.831 (0.127) (0.133)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;5 0.787 (0.127) (0.130)
+&gt;6 0.771 (0.115) (0.128)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;7 0.783 (0.121) (0.126)
+&gt;8 0.846 (0.103) (0.125)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;9 0.832 (0.132) (0.124)
+&gt;10 0.829 (0.165) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;11 0.807 (0.129) (0.123)
+&gt;12 0.867 (0.101) (0.122)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;13 0.835 (0.118) (0.125)
+&gt;14 0.868 (0.116) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;15 0.831 (0.125) (0.123)
+&gt;16 0.835 (0.140) (0.123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;17 0.786 (0.173) (0.123)
+&gt;18 0.819 (0.134) (0.122)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;19 0.832 (0.112) (0.122)
+&gt;20 0.808 (0.146) (0.123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;21 0.808 (0.156) (0.123)
+&gt;22 0.867 (0.129) (0.122)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;23 0.832 (0.112) (0.122)
+&gt;24 0.871 (0.107) (0.122)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;25 0.833 (0.155) (0.123)
+&gt;26 0.821 (0.122) (0.123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;27 0.832 (0.148) (0.123)
+&gt;28 0.810 (0.152) (0.123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;29 0.835 (0.104) (0.123)
+&gt;30 0.797 (0.152) (0.123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;31 0.857 (0.119) (0.123)
+&gt;32 0.832 (0.148) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;33 0.833 (0.155) (0.124)
+&gt;34 0.833 (0.133) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;35 0.847 (0.148) (0.124)
+&gt;36 0.811 (0.128) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;37 0.844 (0.123) (0.124)
+&gt;38 0.822 (0.132) (0.124)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;39 0.822 (0.162) (0.124)
+&gt;40 0.857 (0.119) (0.125)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;41 0.843 (0.148) (0.125)
+&gt;42 0.833 (0.133) (0.125)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;43 0.844 (0.156) (0.125)
+&gt;44 0.843 (0.156) (0.125)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;45 0.832 (0.148) (0.125)
+&gt;46 0.857 (0.169) (0.125)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;47 0.808 (0.137) (0.125)
+&gt;48 0.844 (0.156) (0.126)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;49 0.797 (0.143) (0.125)
+&gt;50 0.832 (0.125) (0.126)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;51 0.846 (0.120) (0.126)
+&gt;52 0.846 (0.107) (0.126)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;53 0.810 (0.191) (0.126)
+&gt;54 0.833 (0.133) (0.126)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;55 0.844 (0.123) (0.127)
+&gt;56 0.833 (0.157) (0.127)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;57 0.810 (0.154) (0.127)
+&gt;58 0.869 (0.098) (0.127)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;59 0.833 (0.094) (0.128)
+&gt;60 0.871 (0.121) (0.128)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;61 0.833 (0.094) (0.128)
+&gt;62 0.833 (0.123) (0.128)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;63 0.824 (0.150) (0.128)
+&gt;64 0.799 (0.160) (0.128)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;65 0.832 (0.148) (0.128)
+&gt;66 0.857 (0.119) (0.128)
+</pre></div>
+</div>
+<img alt="_images/random_forest_analysis_12_33.png" src="_images/random_forest_analysis_12_33.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -643,6 +673,40 @@
     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">avg_scores_k_fold</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
     <span class="n">avg_avg_k_fold</span> <span class="o">=</span> <span class="n">avg_avg_k_fold</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_18692</span><span class="o">/</span><span class="mf">4106717379.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">67</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">avg_scores_k_fold</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">avg_avg_k_fold</span> <span class="o">=</span> <span class="n">avg_avg_k_fold</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py</span> in <span class="ni">stat_func</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11212</span>         <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">  </span><span class="mi">11213</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">)</span>
+<span class="ne">&gt; </span><span class="mi">11214</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11215</span>             <span class="n">f</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
+<span class="g g-Whitespace">  </span><span class="mi">11216</span>         <span class="p">)</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\series.py</span> in <span class="ni">_reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3867</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3868</span>         <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3869</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3870</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3871</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">Categorical</span><span class="p">):</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\pandas\core\generic.py</span> in <span class="ni">_get_axis_number</span><span class="nt">(cls, axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>                 <span class="k">pass</span>
+<span class="ne">--&gt; </span><span class="mi">407</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No axis named </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2"> for object type </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span> 
+<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="nd">@classmethod</span>
+
+<span class="ne">ValueError</span>: No axis named 1 for object type &lt;class &#39;pandas.core.series.Series&#39;&gt;
 </pre></div>
 </div>
 </div>
