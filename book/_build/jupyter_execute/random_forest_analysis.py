@@ -283,10 +283,10 @@ avg_diff_trees.sort_values(by='mean', ascending=0).head(10)
 # In[19]:
 
 
-avg_diff_trees.to_csv('data/cleaned/rnd_forest/avg_vary_trees.csv', index=True)
+avg_diff_trees.to_csv('../data/cleaned/rnd_forest/avg_vary_trees.csv', index=True)
 
 
-# In[102]:
+# In[20]:
 
 
 line1 = plt.plot(avg_diff_trees.index, avg_diff_trees['mean'], label='Mean', c='darkcyan')
@@ -309,13 +309,13 @@ plt.show()
 # 
 # For this particular model, the best performance is recorded when the boostrap sample size is 100% of the size of the training data. Similarly to the Extra Trees model, there is ambiguity surrounding the correct amount of features to use. Selecting from 1 up to 13 features produce the lower results for the mean (by a marginal amount). The number of trees to be used remains at the default of 100. The inrease in accuracy beyond 100 trees can be attributed to statistical noise. Accuracy plateaus beyond 100 trees.
 
-# In[116]:
+# In[21]:
 
 
 final_results = pd.DataFrame(columns=['mean accuracy', 'mean std'])
 
 
-# In[117]:
+# In[22]:
 
 
 final_model = RandomForestClassifier(n_estimators=100, max_features=8, max_samples=1.0)

@@ -175,23 +175,23 @@ pyplot.show()
 avg_vary_feat = pd.DataFrame(columns=['mean', 'std', 'time'])
 for i in range(1, 67):
     i = str(i)
-    s = pd.Series(vary_feat.T[i].mean(axis=1), name=i, index=['mean','std', 'time'])
+    s = pd.Series(vary_feat.T[i][0], name=i, index=['mean','std', 'time'])
     avg_vary_feat = avg_vary_feat.append(s)
 
 
-# In[168]:
+# In[13]:
 
 
 avg_vary_feat.sort_values(by='mean', ascending=0)
 
 
-# In[169]:
+# In[14]:
 
 
 avg_vary_feat.to_csv('../data/cleaned/ex_trees/avg_vary_feat.csv', index=True)
 
 
-# In[170]:
+# In[15]:
 
 
 pyplot.figure(figsize=(15,7))
@@ -209,13 +209,13 @@ pyplot.show()
 
 # ## Exploring number of minimum splits
 
-# In[157]:
+# In[16]:
 
 
 min_trees = pd.DataFrame(columns=["mean","std"])
 
 
-# In[206]:
+# In[17]:
 
 
 # get a list of models to evaluate
@@ -249,7 +249,7 @@ pyplot.title('Minimum Number of Splits by Accuracy')
 pyplot.show()
 
 
-# In[207]:
+# In[18]:
 
 
 #find average of all stored results
@@ -260,13 +260,13 @@ for i in range(2, 15):
     avg_min_trees = avg_min_trees.append(s)
 
 
-# In[208]:
+# In[19]:
 
 
 avg_min_trees.sort_values(by='mean', ascending=0)
 
 
-# In[209]:
+# In[20]:
 
 
 line1 = pyplot.plot(avg_min_trees.index, avg_min_trees['mean'], label='Mean')
@@ -280,7 +280,7 @@ pyplot.savefig('../images/ex_tree/vary_splits2.png')
 pyplot.show()
 
 
-# In[177]:
+# In[21]:
 
 
 avg_min_trees.to_csv('../data/cleaned/ex_trees/avg_min_split.csv', index=True)
@@ -293,13 +293,13 @@ avg_min_trees.to_csv('../data/cleaned/ex_trees/avg_min_split.csv', index=True)
 # 
 # Experimentation has proved that for the most part, the default values of Extra Tree's hyperparameters are not the best suited values for this particular model. Through thorough experimentation, we deduce that the number of minimum splits is best suited to 7 in this particular case over time. Although it should be noted that the gain in variance and standard deviation is miniscule. As well as this, similarly to the random forest model, experimentation results suggest that the number of features to be included remains ambiguous. The general rule of thumb for the number of features to be used in a classification task is the sqrt(number of features), which in our case rounds to 8. However, including only 1 to 10 features on average achieves the lowest results for mean accuracy, although the std is marginally smaller than for other hyperparameter selections such as 50.
 
-# In[210]:
+# In[22]:
 
 
 final_results = pd.DataFrame(columns=['mean accuracy', 'mean std'])
 
 
-# In[212]:
+# In[23]:
 
 
 final_model = ExtraTreesClassifier(n_estimators=100, max_features='sqrt', min_samples_split=2)
@@ -316,7 +316,7 @@ for i in range(50):
     final_results = final_results.append(s)
 
 
-# In[213]:
+# In[24]:
 
 
 final_results.mean()
