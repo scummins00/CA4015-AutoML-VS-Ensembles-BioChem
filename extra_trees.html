@@ -347,33 +347,33 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;10 0.761 (0.202) (1.171)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;10 0.787 (0.200) (1.172)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;50 0.806 (0.146) (0.944)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;50 0.833 (0.098) (0.937)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;100 0.831 (0.114) (0.832)
-&gt;150 0.840 (0.147) (0.660)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;100 0.818 (0.128) (0.826)
+&gt;150 0.831 (0.145) (0.660)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;200 0.785 (0.141) (0.562)
-&gt;250 0.843 (0.132) (0.502)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;200 0.833 (0.133) (0.562)
+&gt;250 0.832 (0.146) (0.504)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;300 0.818 (0.151) (0.465)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;300 0.844 (0.120) (0.467)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;350 0.833 (0.107) (0.442)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;350 0.808 (0.134) (0.443)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;500 0.831 (0.127) (0.439)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;500 0.821 (0.111) (0.437)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;750 0.832 (0.112) (0.452)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;750 0.832 (0.123) (0.453)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1000 0.821 (0.100) (0.480)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1000 0.832 (0.112) (0.480)
 </pre></div>
 </div>
 <img alt="_images/extra_trees_6_9.png" src="_images/extra_trees_6_9.png" />
@@ -423,22 +423,28 @@
   </thead>
   <tbody>
     <tr>
+      <th>300</th>
+      <td>0.844444</td>
+      <td>0.844444</td>
+      <td>0.844444</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>0.833333</td>
+      <td>0.833333</td>
+      <td>0.833333</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>0.833333</td>
+      <td>0.833333</td>
+      <td>0.833333</td>
+    </tr>
+    <tr>
       <th>250</th>
-      <td>0.843056</td>
-      <td>0.843056</td>
-      <td>0.843056</td>
-    </tr>
-    <tr>
-      <th>150</th>
-      <td>0.840278</td>
-      <td>0.840278</td>
-      <td>0.840278</td>
-    </tr>
-    <tr>
-      <th>350</th>
-      <td>0.833333</td>
-      <td>0.833333</td>
-      <td>0.833333</td>
+      <td>0.831944</td>
+      <td>0.831944</td>
+      <td>0.831944</td>
     </tr>
     <tr>
       <th>750</th>
@@ -447,22 +453,16 @@
       <td>0.831944</td>
     </tr>
     <tr>
-      <th>100</th>
-      <td>0.830556</td>
-      <td>0.830556</td>
-      <td>0.830556</td>
-    </tr>
-    <tr>
-      <th>500</th>
-      <td>0.830556</td>
-      <td>0.830556</td>
-      <td>0.830556</td>
-    </tr>
-    <tr>
       <th>1000</th>
-      <td>0.820833</td>
-      <td>0.820833</td>
-      <td>0.820833</td>
+      <td>0.831944</td>
+      <td>0.831944</td>
+      <td>0.831944</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>0.830556</td>
+      <td>0.830556</td>
+      <td>0.830556</td>
     </tr>
   </tbody>
 </table>
@@ -532,7 +532,7 @@
 	<span class="c1"># summarize the performance along the way</span>
 	<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">times</span><span class="p">)],</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
 	<span class="n">vary_feat</span> <span class="o">=</span> <span class="n">vary_feat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">) (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">times</span><span class="p">)))</span>
+
 <span class="c1"># plot model performance for comparison</span>
 <span class="n">pyplot</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -540,129 +540,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1 0.772 (0.116) (0.161)
-&gt;2 0.786 (0.115) (0.130)
-&gt;3 0.819 (0.127) (0.113)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;4 0.807 (0.127) (0.106)
-&gt;5 0.787 (0.114) (0.102)
-&gt;6 0.879 (0.094) (0.099)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;7 0.832 (0.112) (0.097)
-&gt;8 0.821 (0.122) (0.095)
-&gt;9 0.854 (0.110) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;10 0.819 (0.127) (0.096)
-&gt;11 0.843 (0.143) (0.095)
-&gt;12 0.821 (0.114) (0.095)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;13 0.853 (0.135) (0.095)
-&gt;14 0.832 (0.148) (0.095)
-&gt;15 0.832 (0.123) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;16 0.818 (0.170) (0.095)
-&gt;17 0.856 (0.092) (0.094)
-&gt;18 0.818 (0.146) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;19 0.821 (0.122) (0.094)
-&gt;20 0.842 (0.127) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;21 0.843 (0.132) (0.094)
-&gt;22 0.843 (0.112) (0.094)
-&gt;23 0.879 (0.123) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;24 0.843 (0.125) (0.094)
-&gt;25 0.856 (0.128) (0.094)
-&gt;26 0.868 (0.116) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;27 0.806 (0.140) (0.094)
-&gt;28 0.819 (0.136) (0.095)
-&gt;29 0.843 (0.125) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;30 0.831 (0.127) (0.094)
-&gt;31 0.808 (0.125) (0.094)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;32 0.833 (0.110) (0.095)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;33 0.832 (0.128) (0.095)
-&gt;34 0.843 (0.137) (0.095)
-&gt;35 0.794 (0.128) (0.095)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;36 0.843 (0.125) (0.095)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;37 0.831 (0.127) (0.096)
-&gt;38 0.856 (0.092) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;39 0.831 (0.127) (0.095)
-&gt;40 0.856 (0.121) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;41 0.807 (0.138) (0.096)
-&gt;42 0.831 (0.150) (0.096)
-&gt;43 0.831 (0.127) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;44 0.856 (0.092) (0.096)
-&gt;45 0.868 (0.085) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;46 0.867 (0.140) (0.096)
-&gt;47 0.843 (0.137) (0.096)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;48 0.843 (0.112) (0.097)
-&gt;49 0.843 (0.137) (0.097)
-&gt;50 0.832 (0.100) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;51 0.831 (0.127) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;52 0.867 (0.101) (0.097)
-&gt;53 0.868 (0.123) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;54 0.853 (0.144) (0.097)
-&gt;55 0.843 (0.137) (0.097)
-&gt;56 0.843 (0.137) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;57 0.856 (0.121) (0.097)
-&gt;58 0.831 (0.160) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;59 0.832 (0.123) (0.097)
-&gt;60 0.844 (0.132) (0.097)
-&gt;61 0.878 (0.135) (0.097)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;62 0.844 (0.141) (0.098)
-&gt;63 0.819 (0.136) (0.098)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;64 0.844 (0.132) (0.098)
-&gt;65 0.854 (0.144) (0.098)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;66 0.831 (0.134) (0.098)
-</pre></div>
-</div>
-<img alt="_images/extra_trees_13_28.png" src="_images/extra_trees_13_28.png" />
+<img alt="_images/extra_trees_13_0.png" src="_images/extra_trees_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -679,7 +557,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_17456</span><span class="o">/</span><span class="mf">325629898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_19200</span><span class="o">/</span><span class="mf">325629898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">67</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">vary_feat</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
@@ -909,7 +787,7 @@
 <span class="n">avg_min_trees</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">min_trees</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">min_trees</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
     <span class="n">avg_min_trees</span> <span class="o">=</span> <span class="n">avg_min_trees</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1083,7 +961,6 @@
     <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)],</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">])</span>
     <span class="n">final_results</span> <span class="o">=</span> <span class="n">final_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
