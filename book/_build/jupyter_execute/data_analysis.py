@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Data Analysis
-# In the following Jupyter Notebook we will be performing data analysis on the VOC chromatographic data. We will be using hierarchical clustering to cluster the PCA data we created previously.
+# In the following Jupyter Notebook we will be performing data analysis on the VOC chromatographic data. We will be using hierarchical clustering to cluster the PCA data we created previously. This is a repetition of prelimiarly analysis performed by {cite:p}`fitzgerald2021`. This analysis ensures that the data is indeed clusterable and is predictable in nature.
 
 # In[1]:
 
@@ -21,6 +21,8 @@ pca_bhi = pd.read_csv('data/cleaned/bhi_components.csv')
 pca_lb = pd.read_csv('data/cleaned/lb_components.csv')
 pca_full = pd.read_csv('data/cleaned/full_components.csv')
 
+
+# We firstly define a clustering function which we will use to create a visualisation for each of our compounds.
 
 # In[50]:
 
@@ -46,6 +48,8 @@ def plot_clustering(X_red, labels, title=None):
     plt.savefig('images/tsb_pca_cluster.png')
 
 
+# ## TSB Cluster
+
 # In[51]:
 
 
@@ -56,6 +60,8 @@ clustering.fit(pca_tsb.iloc[:,:2])
 
 plot_clustering(pca_tsb, clustering.labels_)
 
+
+# ## BHI Cluster
 
 # In[49]:
 
@@ -68,6 +74,8 @@ clustering.fit(pca_bhi.iloc[:,:2])
 plot_clustering(pca_bhi, clustering.labels_)
 
 
+# ## LB Cluster
+
 # In[45]:
 
 
@@ -79,6 +87,8 @@ clustering.fit(pca_lb.iloc[:,:2])
 plot_clustering(pca_lb, clustering.labels_)
 
 
+# ## All Clustered
+
 # In[47]:
 
 
@@ -88,10 +98,4 @@ clustering = AgglomerativeClustering(linkage='ward', n_clusters=3)
 clustering.fit(pca_full.iloc[:,:2])
 
 plot_clustering(pca_full, clustering.labels_)
-
-
-# In[ ]:
-
-
-
 

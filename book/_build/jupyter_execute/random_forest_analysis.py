@@ -338,15 +338,3 @@ for i in range(50):
 
 final_results.mean()
 
-
-# In[115]:
-
-
-final_results
-
-
-# In[ ]:
-
-
-
-

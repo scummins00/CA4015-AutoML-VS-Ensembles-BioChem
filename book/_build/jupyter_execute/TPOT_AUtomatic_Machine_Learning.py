@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # TPOT
+# In this notebook, we will define our TPOT pipeline, fit it to our training data and then use it to predict our test data.
+
 # In[1]:
 
 
@@ -24,10 +27,10 @@ from tpot import TPOTClassifier
 
 #Read in our data (If above not working) you must import the file yourself.
 #File will be deleted once GPU runtime expires.
-train_data = pd.read_csv('data/cleaned/long.csv')
+train_data = pd.read_csv('../data/cleaned/long.csv')
 
 
-# In[7]:
+# In[4]:
 
 
 #Extract our training labels
@@ -37,7 +40,7 @@ train_labels = train_data.Strain
 train_features = train_data.drop(["Species", "Strain", "Samples "], axis=1)
 
 
-# In[8]:
+# In[5]:
 
 
 #Convert to 'numpy' arrays
@@ -45,7 +48,7 @@ training_features = np.array(train_features)
 training_labels = np.array(train_labels).reshape((-1,))
 
 
-# In[9]:
+# In[6]:
 
 
 #Build the TPOT framework
@@ -57,29 +60,28 @@ tpot = TPOTClassifier(scoring = 'neg_mean_absolute_error',
                       cv=6)
 
 
-# In[11]:
+# ## Fitting The Model
+# The following cell will fit our TPOT model to our training data. It should be noted that this process is considerably faster with GPU utilisation. GPU utilisation is not a built-in feature with Jupyter Notebook. Therefore, this process is considerably faster on other platforms such as Google Colab.
+
+# In[7]:
 
 
 # Fit the tpot model on the training data
 tpot.fit(training_features, training_labels)
 
 
-# In[ ]:
+# In[8]:
 
 
 # Show the final model
 print(tpot.fitted_pipeline_)
 
 
-# In[ ]:
+# Once we are finished with the model we export it to a file for use later on.
+
+# In[9]:
 
 
 # Export the pipeline as a python script file
 tpot.export('tpot_exported_pipeline.py')
-
-
-# In[ ]:
-
-
-
 

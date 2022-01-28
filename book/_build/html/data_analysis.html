@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,6 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Random Forest" href="random_forest_analysis.html" />
+    <link rel="prev" title="Data Cleaning" href="data_cleaning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,6 +90,34 @@
   </a>
  </li>
 </ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_cleaning.html">
+   Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="random_forest_analysis.html">
+   Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extra_trees.html">
+   Extra Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="TPOT_AUtomatic_Machine_Learning.html">
+   TPOT
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -183,6 +215,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsb-cluster">
+   TSB Cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bhi-cluster">
+   BHI Cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lb-cluster">
+   LB Cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#all-clustered">
+   All Clustered
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -193,7 +253,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-analysis">
 <h1>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">¶</a></h1>
-<p>In the following Jupyter Notebook we will be performing data analysis on the VOC chromatographic data. We will be using hierarchical clustering to cluster the PCA data we created previously.</p>
+<p>In the following Jupyter Notebook we will be performing data analysis on the VOC chromatographic data. We will be using hierarchical clustering to cluster the PCA data we created previously. This is a repetition of prelimiarly analysis performed by <span id="id1">[]</span>. This analysis ensures that the data is indeed clusterable and is predictable in nature.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -216,7 +276,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_1604</span><span class="o">/</span><span class="mf">1180238909.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_18868</span><span class="o">/</span><span class="mf">1180238909.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Read in our datasets</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pca_tsb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/tsb_components.csv&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pca_bhi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/bhi_components.csv&#39;</span><span class="p">)</span>
@@ -267,6 +327,7 @@
 </div>
 </div>
 </div>
+<p>We firstly define a clustering function which we will use to create a visualisation for each of our compounds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_clustering</span><span class="p">(</span><span class="n">X_red</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -292,6 +353,8 @@
 </div>
 </div>
 </div>
+<div class="section" id="tsb-cluster">
+<h2>TSB Cluster<a class="headerlink" href="#tsb-cluster" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
@@ -304,9 +367,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/data_analysis_4_0.png" src="_images/data_analysis_4_0.png" />
+<img alt="_images/data_analysis_6_0.png" src="_images/data_analysis_6_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="bhi-cluster">
+<h2>BHI Cluster<a class="headerlink" href="#bhi-cluster" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
@@ -319,9 +385,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/data_analysis_5_0.png" src="_images/data_analysis_5_0.png" />
+<img alt="_images/data_analysis_8_0.png" src="_images/data_analysis_8_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="lb-cluster">
+<h2>LB Cluster<a class="headerlink" href="#lb-cluster" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
@@ -334,9 +403,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/data_analysis_6_0.png" src="_images/data_analysis_6_0.png" />
+<img alt="_images/data_analysis_10_0.png" src="_images/data_analysis_10_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="all-clustered">
+<h2>All Clustered<a class="headerlink" href="#all-clustered" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
@@ -349,7 +421,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/data_analysis_7_0.png" src="_images/data_analysis_7_0.png" />
+<img alt="_images/data_analysis_12_0.png" src="_images/data_analysis_12_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -383,6 +456,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="data_cleaning.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Data Cleaning</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="random_forest_analysis.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Random Forest</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
